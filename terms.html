@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - SSVH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #1a365d; --secondary: #c9a962; }
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        .nav-scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-menu.active { transform: translateX(0); }
+        .page-header { background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 90, 74, 0.8) 100%); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm">
+        <div class="w-full px-6 lg:px-12">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-[#1a365d] rounded-lg flex items-center justify-center">
+                        <span class="text-white font-display font-bold text-xl">S</span>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl font-bold text-[#1a365d]">SSVH</span>
+                        <p class="text-xs text-gray-500 -mt-1">Premium Living</p>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962]">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962]">About Us</a>
+                    <a href="projects-ongoing.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962]">Projects</a>
+                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962]">Contact</a>
+                </div>
+                <button id="mobileToggle" class="lg:hidden p-2">
+                    <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white z-40 lg:hidden">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-display text-2xl font-bold text-[#1a365d]">SSVH</span>
+                <button id="closeMobile" class="p-2">
+                    <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a href="index.html" class="text-lg font-medium text-gray-600">Home</a>
+                <a href="about.html" class="text-lg font-medium text-gray-600">About Us</a>
+                <a href="projects-ongoing.html" class="text-lg font-medium text-gray-600">Projects</a>
+                <a href="contact.html" class="text-lg font-medium text-gray-600">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-header pt-32 pb-20">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto text-center">
+                <p class="text-[#c9a962] font-medium tracking-widest uppercase mb-4">Legal</p>
+                <h1 class="font-display text-5xl lg:text-6xl font-bold text-white mb-4">Terms & Conditions</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-gray-600 mb-6">Last updated: January 2024</p>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">1. Acceptance of Terms</h2>
+                <p class="text-gray-600 mb-6">By accessing and using the SSVH website, you accept and agree to be bound by these Terms & Conditions. If you do not agree, please do not use our website.</p>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">2. Use of Website</h2>
+                <p class="text-gray-600 mb-4">You agree to use our website for lawful purposes only. You must not:</p>
+                <ul class="list-disc pl-6 text-gray-600 mb-6">
+                    <li class="mb-2">Use the website in any way that breaches applicable laws</li>
+                    <li class="mb-2">Transmit any harmful code or malware</li>
+                    <li class="mb-2">Attempt to gain unauthorized access to our systems</li>
+                    <li class="mb-2">Misrepresent your identity or provide false information</li>
+                </ul>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">3. Intellectual Property</h2>
+                <p class="text-gray-600 mb-6">All content on this website, including text, graphics, logos, images, and software, is the property of SSVH and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, or use any content without our express written permission.</p>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">4. Property Information</h2>
+                <p class="text-gray-600 mb-6">While we strive to provide accurate information about our properties, all details, including prices, availability, and specifications, are subject to change without notice. All properties are subject to prior sale or withdrawal from the market.</p>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">5. Booking and Payments</h2>
+                <p class="text-gray-600 mb-6">Bookings are subject to verification and availability. All payments must be made according to the payment schedule outlined in the agreement. Cancellation policies will apply as per the terms of the specific project.</p>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">6. Limitation of Liability</h2>
+                <p class="text-gray-600 mb-6">SSVH shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of the website or any information contained therein.</p>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">7. Governing Law</h2>
+                <p class="text-gray-600 mb-6">These Terms & Conditions shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Indore, Madhya Pradesh.</p>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">8. Changes to Terms</h2>
+                <p class="text-gray-600 mb-6">We reserve the right to modify these Terms & Conditions at any time. Changes will be effective immediately upon posting on the website. Your continued use of the website constitutes acceptance of the revised terms.</p>
+                
+                <h2 class="font-display text-2xl font-bold text-[#1a365d] mb-4">9. Contact Information</h2>
+                <p class="text-gray-600">For any questions regarding these Terms & Conditions, please contact us at:<br>Email: legal@ssvh.com<br>Phone: +91 12345 67890</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-10 mb-12">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                <span class="text-[#1a365d] font-display font-bold text-xl">S</span>
+                            </div>
+                            <span class="font-display text-2xl font-bold">SSVH</span>
+                        </div>
+                        <p class="text-gray-400 mb-6">Building premium residential communities since 2000.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962]">About Us</a></li>
+                            <li><a href="projects-ongoing.html" class="text-gray-400 hover:text-[#c9a962]">Projects</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-[#c9a962]">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-lg font-bold mb-6">Legal</h4>
+                        <ul class="space-y-3">
+                            <li><a href="privacy.html" class="text-gray-400 hover:text-[#c9a962]">Privacy Policy</a></li>
+                            <li><a href="terms.html" class="text-gray-400 hover:text-[#c9a962]">Terms & Conditions</a></li>
+                            <li><a href="disclaimer.html" class="text-gray-400 hover:text-[#c9a962]">Disclaimer</a></li>
+                            <li><a href="rera.html" class="text-gray-400 hover:text-[#c9a962]">RERA Details</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-lg font-bold mb-6">Contact</h4>
+                        <ul class="space-y-3 text-gray-400">
+                            <li>123 Architecture Lane, Indore</li>
+                            <li>info@ssvh.com</li>
+                            <li>+91 12345 67890</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                    <p>© 2024 SSVH. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const closeMobile = document.getElementById('closeMobile');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.add('active'));
+        closeMobile.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) navbar.classList.add('nav-scrolled');
+            else navbar.classList.remove('nav-scrolled');
+        }, { passive: true });
+    </script>
+</body>
+</html>

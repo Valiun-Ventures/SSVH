@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Radhakunj - Premium Living | SSVH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #1a365d; --secondary: #c9a962; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        html { scroll-behavior: smooth; }
+        .nav-scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .text-gold { color: #c9a962; }
+        .bg-gold { background-color: #c9a962; }
+        .btn-gold { background: var(--secondary); color: white; transition: all 0.3s ease; }
+        .btn-gold:hover { background: #b8973d; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3); }
+        .btn-primary { background: var(--primary); color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background: #0f2447; }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); transition: all 0.3s ease; }
+        .btn-outline:hover { background: var(--primary); color: white; }
+        .card-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+        .card-shadow:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.12); transform: translateY(-5px); }
+        .section-divider { width: 60px; height: 3px; background: var(--secondary); }
+        .reveal { opacity: 0; transform: translateY(30px); }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-menu.active { transform: translateX(0); }
+        .hero-bg { background: linear-gradient(135deg, rgba(26, 54, 93, 0.85) 0%, rgba(45, 90, 74, 0.75) 100%), url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; }
+        .gallery-img { cursor: pointer; transition: transform 0.3s ease; }
+        .gallery-img:hover { transform: scale(1.05); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #c9a962; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 bg-white/95 backdrop-blur-sm">
+        <div class="w-full px-6 lg:px-12">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-[#1a365d] rounded-lg flex items-center justify-center">
+                        <span class="text-white font-display font-bold text-xl">S</span>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl font-bold text-[#1a365d]">SSVH</span>
+                        <p class="text-xs text-gray-500 -mt-1">Premium Living</p>
+                    </div>
+                </a>
+                
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">About Us</a>
+                    <div class="relative group">
+                        <button class="text-sm font-medium text-[#1a365d] hover:text-[#c9a962] transition-colors flex items-center gap-1">
+                            Projects
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
+                            <a href="projects-ongoing.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Ongoing Projects</a>
+                            <a href="projects-completed.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Completed Projects</a>
+                            <hr class="my-2">
+                            <a href="project-maratha.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">The Grand Maratha</a>
+                            <a href="project-british.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">British Grand</a>
+                            <a href="project-shyam.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#c9a962]">Shyam Vihar</a>
+                            <a href="project-singapore.html" class="block px-4 py-2 text-sm text-[#1a365d] hover:bg-gray-50 hover:text-[#c9a962]">Singapore Radhakunj</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-[#c9a962] transition-colors">Contact</a>
+                </div>
+                
+                <div class="hidden lg:block">
+                    <a href="media-brochures.html" class="btn-gold px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span>Download Brochure</span>
+                    </a>
+                </div>
+                
+                <button id="mobileToggle" class="lg:hidden p-2">
+                    <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white z-40 lg:hidden">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-display text-2xl font-bold text-[#1a365d]">SSVH</span>
+                <button id="closeMobile" class="p-2">
+                    <svg class="w-6 h-6 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a href="index.html" class="text-lg font-medium text-gray-600">Home</a>
+                <a href="about.html" class="text-lg font-medium text-gray-600">About Us</a>
+                <a href="projects-ongoing.html" class="text-lg font-medium text-gray-600">Projects</a>
+                <a href="contact.html" class="text-lg font-medium text-gray-600">Contact</a>
+                <hr class="my-4">
+                <a href="media-brochures.html" class="btn-gold px-6 py-3 rounded-full text-center font-semibold">Download Brochure</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-24">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="max-w-2xl">
+                    <span class="inline-block bg-[#c9a962] text-white px-4 py-1 rounded-full text-sm font-medium mb-6">Ongoing Project</span>
+                    <h1 class="font-display text-5xl lg:text-6xl font-bold text-white mb-6">Singapore Radhakunj</h1>
+                    <p class="text-white/80 text-lg mb-8">Singapore-Style Premium Living - Experience modern Asian architecture in Indore</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="contact.html" class="btn-gold px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
+                            <span>Enquire Now</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="media-brochures.html" class="px-8 py-4 rounded-full font-semibold border-2 border-white text-white hover:bg-white hover:text-[#1a365d] transition-all inline-flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            <span>Download Brochure</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-16">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <div class="section-divider mb-6"></div>
+                        <h2 class="font-display text-4xl font-bold text-[#1a365d] mb-6">Project Overview</h2>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Singapore Radhakunj brings the elegance of Singaporean architecture to Indore. This premium 
+                            residential project features modern design principles inspired by Singapore's urban planning, 
+                            offering a unique living experience that combines aesthetics with functionality.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-8">
+                            With plot sizes ranging from 1500 to 3000 sq.ft, Singapore Radhakunj caters to discerning 
+                            homebuyers who appreciate contemporary design. The project features smart home-ready infrastructure, 
+                            sustainable water management systems, and lush vertical gardens.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="p-4 bg-gray-50 rounded-xl">
+                                <p class="text-2xl font-bold text-[#1a365d]">30</p>
+                                <p class="text-sm text-gray-500">Acres of Land</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-xl">
+                                <p class="text-2xl font-bold text-[#1a365d]">250+</p>
+                                <p class="text-sm text-gray-500">Premium Plots</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-xl">
+                                <p class="text-2xl font-bold text-[#1a365d]">50ft</p>
+                                <p class="text-sm text-gray-500">Wide Roads</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-xl">
+                                <p class="text-2xl font-bold text-[#1a365d]">Smart</p>
+                                <p class="text-sm text-gray-500">Home Ready</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Singapore Radhakunj Overview" 
+                             class="rounded-2xl shadow-2xl w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plot Details -->
+    <section class="py-16 bg-gray-50">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <h2 class="font-display text-4xl font-bold text-[#1a365d]">Plot Configurations</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="reveal bg-white rounded-2xl overflow-hidden card-shadow border-2 border-gray-100">
+                        <div class="p-8 text-center">
+                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Silver</h3>
+                            <p class="text-gray-500 mb-6">1500 sq.ft</p>
+                            <p class="text-3xl font-bold text-[#c9a962] mb-6">₹24 Lakh</p>
+                            <ul class="text-left space-y-3 mb-8">
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Smart Infrastructure
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Rainwater Harvesting
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    EV Charging Points
+                                </li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full py-3 rounded-xl font-semibold text-center inline-block">Enquire Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="reveal bg-white rounded-2xl overflow-hidden card-shadow border-2 border-[#c9a962] relative">
+                        <div class="absolute top-0 right-0 bg-[#c9a962] text-white px-4 py-1 text-sm font-medium">Popular</div>
+                        <div class="p-8 text-center">
+                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Gold</h3>
+                            <p class="text-gray-500 mb-6">2250 sq.ft</p>
+                            <p class="text-3xl font-bold text-[#c9a962] mb-6">₹36 Lakh</p>
+                            <ul class="text-left space-y-3 mb-8">
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Corner Plot Options
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Premium Location
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Private Garden Space
+                                </li>
+                            </ul>
+                            <a href="contact.html" class="btn-gold w-full py-3 rounded-xl font-semibold text-center inline-block">Enquire Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="reveal bg-white rounded-2xl overflow-hidden card-shadow border-2 border-gray-100">
+                        <div class="p-8 text-center">
+                            <h3 class="font-display text-2xl font-bold text-[#1a365d] mb-2">Platinum</h3>
+                            <p class="text-gray-500 mb-6">3000 sq.ft</p>
+                            <p class="text-3xl font-bold text-[#c9a962] mb-6">₹48 Lakh</p>
+                            <ul class="text-left space-y-3 mb-8">
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    VIP Corner Plots
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Main Boulevard Facing
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-600">
+                                    <svg class="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Exclusive Club Access
+                                </li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full py-3 rounded-xl font-semibold text-center inline-block">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="py-16 bg-[#1a365d]">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <div class="section-divider bg-[#c9a962] mx-auto mb-6"></div>
+                    <h2 class="font-display text-4xl font-bold text-white">Singapore-Style Amenities</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="reveal text-center">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Smart Grid Power</h3>
+                        <p class="text-white/60 text-sm">Intelligent power management</p>
+                    </div>
+                    <div class="reveal text-center">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Solar Lighting</h3>
+                        <p class="text-white/60 text-sm">Eco-friendly illumination</p>
+                    </div>
+                    <div class="reveal text-center">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 7m0 13V7"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Rainwater Harvesting</h3>
+                        <p class="text-white/60 text-sm">Sustainable water system</p>
+                    </div>
+                    <div class="reveal text-center">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Vertical Gardens</h3>
+                        <p class="text-white/60 text-sm">Green walls throughout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <h2 class="font-display text-4xl font-bold text-[#1a365d]">Project Gallery</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="reveal gallery-img overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Gallery 1" class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-img overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Gallery 2" class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-img overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Gallery 3" class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-img overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" 
+                             alt="Gallery 4" class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-img overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Gallery 5" class="w-full aspect-square object-cover">
+                    </div>
+                    <div class="reveal gallery-img overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Gallery 6" class="w-full aspect-square object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RERA Info -->
+    <section class="py-16 bg-gray-50">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 reveal">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-[#1a365d]/10 rounded-full flex items-center justify-center">
+                            <span class="font-display text-xl font-bold text-[#1a365d]">RERA</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-[#1a365d]">RERA Registered Project</h3>
+                            <p class="text-gray-500">MP/08/2024/00245 | Valid until 2029</p>
+                        </div>
+                    </div>
+                    <a href="rera.html" class="btn-outline px-6 py-3 rounded-full font-semibold">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-[#c9a962]">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h2 class="font-display text-4xl font-bold text-white mb-4">Experience Singapore-Style Living</h2>
+                <p class="text-white/80 mb-8">Book your plot today and be part of Indore's most innovative residential community.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-white text-[#c9a962] px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                        <span>Schedule Site Visit</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="media-brochures.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-white hover:text-[#c9a962] transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span>Download Brochure</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="w-full px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-12 mb-16">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                <span class="text-[#1a365d] font-display font-bold text-xl">S</span>
+                            </div>
+                            <span class="font-display text-2xl font-bold">SSVH</span>
+                        </div>
+                        <p class="text-gray-400 mb-6">Building premium residential communities since 2000.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-display text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">About Us</a></li>
+                            <li><a href="projects-ongoing.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Projects</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-display text-lg font-bold mb-6">Projects</h4>
+                        <ul class="space-y-3">
+                            <li><a href="project-maratha.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">The Grand Maratha</a></li>
+                            <li><a href="project-british.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">British Grand</a></li>
+                            <li><a href="project-shyam.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Shyam Vihar</a></li>
+                            <li><a href="project-singapore.html" class="text-gray-400 hover:text-[#c9a962] transition-colors">Singapore Radhakunj</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-display text-lg font-bold mb-6">Contact</h4>
+                        <ul class="space-y-3 text-gray-400">
+                            <li>123 Architecture Lane, Indore</li>
+                            <li>info@ssvh.com</li>
+                            <li>+91 12345 67890</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                    <p>© 2024 SSVH. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const closeMobile = document.getElementById('closeMobile');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.add('active'));
+        closeMobile.addEventListener('click', () => mobileMenu.classList.remove('active'));
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) navbar.classList.add('nav-scrolled');
+            else navbar.classList.remove('nav-scrolled');
+        }, { passive: true });
+
+        gsap.registerPlugin(ScrollTrigger);
+        
+        document.querySelectorAll('.reveal').forEach(el => {
+            gsap.fromTo(el, 
+                { y: 30, opacity: 0 },
+                {
+                    y: 0, opacity: 1, duration: 0.8,
+                    scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+                }
+            );
+        });
+    </script>
+</body>
+</html>
